@@ -56,6 +56,7 @@ const PricingTiers = ({ onSelectTier }) => {
 
   return (
     <div className="pricing-container">
+      <p className="section-overline">Step 2 · Choose a plan</p>
       <h2 className="pricing-title">Choose Your Gift Planning Experience</h2>
       <p className="pricing-subtitle">All plans include instant AI-generated gift recommendations</p>
 

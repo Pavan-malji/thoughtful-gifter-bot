@@ -16,6 +16,7 @@ const PaymentSimulator = ({ amount, onPaymentComplete }) => {
 
   return (
     <div className="payment-container">
+      <p className="section-overline">Step 3 · Checkout</p>
       <div className="payment-card">
         <h2 className="payment-title">Checkout</h2>
         <div className="payment-notice">

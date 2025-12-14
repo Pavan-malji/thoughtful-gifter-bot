@@ -1,6 +1,6 @@
 .pricing-container {
   max-width: 1200px;
-  margin: 3rem auto;
+  margin: 4rem auto;
   padding: 0 1.5rem;
 }
 
@@ -19,7 +19,7 @@
 
 .tiers-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 2rem;
   margin-bottom: 2rem;
 }
@@ -131,7 +131,27 @@
   color: white;
 }
 
-@media (max-width: 968px) {
+.tiers-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+/* Desktop: always 3 columns */
+@media (min-width: 900px) {
+  .tiers-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Tablet: 2 columns */
+@media (min-width: 600px) and (max-width: 899px) {
+  .tiers-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile: 1 column (default) */
+@media (max-width: 599px) {
   .tiers-grid {
     grid-template-columns: 1fr;
   }
