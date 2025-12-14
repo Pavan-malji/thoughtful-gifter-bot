@@ -1,0 +1,138 @@
+.pricing-container {
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+}
+
+.pricing-title {
+  font-size: 2rem;
+  color: #2d3748;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.pricing-subtitle {
+  color: #718096;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.tiers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.tier-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  position: relative;
+  border: 3px solid transparent;
+}
+
+.tier-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.tier-card.selected {
+  border-color: #667eea;
+  box-shadow: 0 12px 40px rgba(102, 126, 234, 0.25);
+}
+
+.tier-badge {
+  position: absolute;
+  top: -12px;
+  right: 20px;
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.tier-name {
+  font-size: 1.5rem;
+  color: #2d3748;
+  margin-bottom: 1rem;
+}
+
+.tier-price {
+  margin-bottom: 1rem;
+}
+
+.price-currency {
+  font-size: 1.5rem;
+  color: #667eea;
+  font-weight: 600;
+  vertical-align: super;
+}
+
+.price-amount {
+  font-size: 3rem;
+  color: #667eea;
+  font-weight: 700;
+}
+
+.tier-description {
+  color: #718096;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.tier-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem 0;
+}
+
+.tier-features li {
+  padding: 0.75rem 0;
+  color: #4a5568;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.check-icon {
+  color: #48bb78;
+  font-weight: 700;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.tier-button {
+  width: 100%;
+  padding: 1rem;
+  background: white;
+  color: #667eea;
+  border: 2px solid #667eea;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tier-button:hover {
+  background: #667eea;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.tier-button.selected {
+  background: #667eea;
+  color: white;
+}
+
+@media (max-width: 968px) {
+  .tiers-grid {
+    grid-template-columns: 1fr;
+  }
+}

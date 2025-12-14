@@ -1,0 +1,120 @@
+.gift-plan-container {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+}
+
+.plan-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.plan-title {
+  font-size: 2.25rem;
+  color: #2d3748;
+  margin-bottom: 0.5rem;
+}
+
+.plan-subtitle {
+  color: #718096;
+  font-size: 1.05rem;
+}
+
+.plan-content {
+  background: white;
+  border-radius: 12px;
+  padding: 3rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  margin-bottom: 2rem;
+  line-height: 1.8;
+}
+
+.plan-content h1 {
+  color: #2d3748;
+  font-size: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid #667eea;
+}
+
+.plan-content h2 {
+  color: #4a5568;
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.plan-content h3 {
+  color: #667eea;
+  font-size: 1.25rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.plan-content p {
+  color: #4a5568;
+  margin-bottom: 1rem;
+}
+
+.plan-content ul,
+.plan-content ol {
+  margin-left: 1.5rem;
+margin-bottom: 1.5rem;
+}.plan-content li {
+color: #4a5568;
+margin-bottom: 0.5rem;
+}.plan-content strong {
+color: #2d3748;
+font-weight: 600;
+}.plan-content code {
+background: #edf2f7;
+padding: 0.2rem 0.4rem;
+border-radius: 4px;
+font-family: 'Courier New', monospace;
+font-size: 0.9em;
+}.plan-content blockquote {
+border-left: 4px solid #667eea;
+padding-left: 1.5rem;
+margin: 1.5rem 0;
+color: #4a5568;
+font-style: italic;
+}.plan-actions {
+display: flex;
+gap: 1rem;
+justify-content: center;
+flex-wrap: wrap;
+}.action-button {
+padding: 1rem 2rem;
+border: none;
+border-radius: 8px;
+font-size: 1rem;
+font-weight: 600;
+cursor: pointer;
+transition: all 0.3s ease;
+display: flex;
+align-items: center;
+gap: 0.5rem;
+}.action-button.primary {
+background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+color: white;
+}.action-button.secondary {
+background: white;
+color: #667eea;
+border: 2px solid #667eea;
+}.action-button:hover {
+transform: translateY(-2px);
+box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}@media print {
+.plan-actions {
+display: none;
+}.plan-content {
+box-shadow: none;
+}
+}@media (max-width: 768px) {
+.plan-content {
+padding: 1.5rem;
+}.plan-title {
+font-size: 1.75rem;
+}
+}
