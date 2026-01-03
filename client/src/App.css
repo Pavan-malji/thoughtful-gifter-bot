@@ -1,24 +1,3 @@
-/* * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-  min-height: 100vh;
-}
-
-.app {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-} */
-
 * {
   margin: 0;
   padding: 0;
@@ -31,7 +10,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  background: #f9fafb;
   min-height: 100vh;
 }
 
@@ -40,11 +19,17 @@ body {
   display: flex;
   flex-direction: column;
 }
+
+main {
+  flex: 1;
+}
+
+/* Remove section-overline globally if still used anywhere */
 .section-overline {
   text-transform: uppercase;
-  letter-spacing: 0.12em;
-  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  font-size: 0.75rem;
   font-weight: 600;
-  color: #718096;
+  color: #9ca3af;
   margin-bottom: 0.75rem;
 }

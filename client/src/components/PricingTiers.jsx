@@ -7,8 +7,8 @@ const PricingTiers = ({ onSelectTier }) => {
   const tiers = [
     {
       id: 'basic',
-      name: 'Basic Plan',
-      price: 49,  // Changed from 4.99
+      name: 'Basic',
+      price: 49,
       description: 'Perfect for simple gift ideas',
       features: [
         '5 Personalized Gift Ideas',
@@ -16,12 +16,12 @@ const PricingTiers = ({ onSelectTier }) => {
         '2 Custom Card Messages',
         'Basic Presentation Tips'
       ],
-      badge: null
+      recommended: false
     },
     {
       id: 'premium',
-      name: 'Premium Plan',
-      price: 99,  // Changed from 9.99
+      name: 'Premium',
+      price: 99,
       description: 'For thoughtful, detailed planning',
       features: [
         'Everything in Basic',
@@ -30,12 +30,12 @@ const PricingTiers = ({ onSelectTier }) => {
         'Enhanced Presentation Ideas',
         'Priority Support'
       ],
-      badge: 'POPULAR'
+      recommended: true
     },
     {
       id: 'concierge',
-      name: 'Concierge Plan',
-      price: 149,  // Changed from 19.99
+      name: 'Concierge',
+      price: 149,
       description: 'Complete white-glove gift service',
       features: [
         'Everything in Premium',
@@ -45,7 +45,7 @@ const PricingTiers = ({ onSelectTier }) => {
         'Backup Gift Options',
         '24/7 Premium Support'
       ],
-      badge: 'BEST VALUE'
+      recommended: false
     }
   ];
 
@@ -56,30 +56,36 @@ const PricingTiers = ({ onSelectTier }) => {
 
   return (
     <div className="pricing-container">
-      <p className="section-overline">Step 2 · Choose a plan</p>
-      <h2 className="pricing-title">Choose Your Gift Planning Experience</h2>
-      <p className="pricing-subtitle">All plans include instant AI-generated gift recommendations</p>
+      <div className="pricing-header">
+        <h2 className="pricing-title">Choose Your Plan</h2>
+        <p className="pricing-subtitle">All plans include instant gift recommendations tailored to your recipient</p>
+      </div>
 
       <div className="tiers-grid">
         {tiers.map((tier) => (
           <div
             key={tier.id}
-            className={`tier-card ${selectedTier === tier.id ? 'selected' : ''}`}
+            className={`tier-card ${selectedTier === tier.id ? 'selected' : ''} ${tier.recommended ? 'recommended' : ''}`}
           >
-            {tier.badge && <div className="tier-badge">{tier.badge}</div>}
+            {tier.recommended && <div className="tier-badge">Most Popular</div>}
 
-            <h3 className="tier-name">{tier.name}</h3>
+            <div className="tier-header">
+              <h3 className="tier-name">{tier.name}</h3>
+              <p className="tier-description">{tier.description}</p>
+            </div>
+
             <div className="tier-price">
               <span className="price-currency">₹</span>
               <span className="price-amount">{tier.price}</span>
             </div>
-            <p className="tier-description">{tier.description}</p>
 
             <ul className="tier-features">
               {tier.features.map((feature, index) => (
                 <li key={index}>
-                  <span className="check-icon">✓</span>
-                  {feature}
+                  <svg className="check-icon" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span>{feature}</span>
                 </li>
               ))}
             </ul>

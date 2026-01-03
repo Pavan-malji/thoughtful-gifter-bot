@@ -1,24 +1,24 @@
 .loading-container {
-  max-width: 600px;
+  max-width: 500px;
   margin: 4rem auto;
-  padding: 3rem 1.5rem;
+  padding: 2rem 1.5rem;
   text-align: center;
 }
 
 .spinner-wrapper {
   position: relative;
-  width: 120px;
-  height: 120px;
+  width: 80px;
+  height: 80px;
   margin: 0 auto 2rem;
 }
 
 .spinner {
-  width: 120px;
-  height: 120px;
-  border: 6px solid #e2e8f0;
-  border-top-color: #667eea;
+  width: 80px;
+  height: 80px;
+  border: 3px solid #e5e7eb;
+  border-top-color: #7c3aed;
   border-radius: 50%;
-  animation: spin 1s linear infinite;
+  animation: spin 0.8s linear infinite;
 }
 
 .gift-icon {
@@ -26,7 +26,9 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 3rem;
+  width: 32px;
+  height: 32px;
+  color: #7c3aed;
   animation: pulse 1.5s ease-in-out infinite;
 }
 
@@ -38,54 +40,79 @@
 
 @keyframes pulse {
   0%, 100% {
-    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
   }
   50% {
-    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 0.5;
   }
 }
 
 .loading-title {
-  font-size: 1.75rem;
-  color: #2d3748;
-  margin-bottom: 0.75rem;
+  font-size: 1.5rem;
+  color: #111827;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
 }
 
 .loading-text {
-  color: #718096;
-  font-size: 1.1rem;
+  color: #6b7280;
+  font-size: 1rem;
   margin-bottom: 2rem;
 }
 
 .loading-steps {
-  background: white;
+  background: #ffffff;
   border-radius: 8px;
-  padding: 2rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+  text-align: left;
 }
 
 .step {
-  padding: 0.75rem;
-  margin: 0.5rem 0;
-  color: #4a5568;
-  font-size: 1rem;
+  padding: 0.75rem 0;
+  color: #6b7280;
+  font-size: 0.9375rem;
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 0.75rem;
 }
 
-.step.active {
-  color: #667eea;
-  font-weight: 600;
-  animation: fadeIn 0.5s ease-in;
+.step svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
+.step.completed {
+  color: #10b981;
+}
+
+.step.active {
+  color: #7c3aed;
+  font-weight: 500;
+}
+
+.step-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #e5e7eb;
+  border-top-color: #7c3aed;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+  flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+  .loading-container {
+    margin: 2rem auto;
   }
-  to {
-    opacity: 1;
+  
+  .loading-title {
+    font-size: 1.25rem;
+  }
+  
+  .loading-text {
+    font-size: 0.9375rem;
   }
 }

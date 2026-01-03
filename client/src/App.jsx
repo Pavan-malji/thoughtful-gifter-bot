@@ -6,6 +6,7 @@ import PricingTiers from './components/PricingTiers';
 import PaymentSimulator from './components/PaymentSimulator';
 import GiftPlanDisplay from './components/GiftPlanDisplay';
 import LoadingSpinner from './components/LoadingSpinner';
+import Footer from './components/Footer';
 import './App.css';
 
 function App() {
@@ -15,8 +16,8 @@ function App() {
   const [selectedPrice, setSelectedPrice] = useState(0);
   const [giftPlan, setGiftPlan] = useState('');
 
-  // API URL - simple localhost for development
-  const API_URL = 'http://localhost:3001/api/generate-gift-plan';
+  // API URL - uses environment variable with localhost fallback
+const API_URL = import.meta.env.VITE_API_URL;
 
   const handleFormSubmit = (data) => {
     console.log('✅ Form submitted:', data);
@@ -83,31 +84,35 @@ function App() {
     <div className="app">
       <Header />
       
-      {currentStep === 'form' && (
-        <GiftForm onSubmit={handleFormSubmit} />
-      )}
+      <main>
+        {currentStep === 'form' && (
+          <GiftForm onSubmit={handleFormSubmit} />
+        )}
 
-      {currentStep === 'pricing' && (
-        <PricingTiers onSelectTier={handleTierSelect} />
-      )}
+        {currentStep === 'pricing' && (
+          <PricingTiers onSelectTier={handleTierSelect} />
+        )}
 
-      {currentStep === 'payment' && (
-        <PaymentSimulator 
-          amount={selectedPrice} 
-          onPaymentComplete={handlePaymentComplete} 
-        />
-      )}
+        {currentStep === 'payment' && (
+          <PaymentSimulator 
+            amount={selectedPrice} 
+            onPaymentComplete={handlePaymentComplete} 
+          />
+        )}
 
-      {currentStep === 'loading' && (
-        <LoadingSpinner />
-      )}
+        {currentStep === 'loading' && (
+          <LoadingSpinner />
+        )}
 
-      {currentStep === 'result' && (
-        <GiftPlanDisplay 
-          giftPlan={giftPlan} 
-          recipientName={formData?.recipientName} 
-        />
-      )}
+        {currentStep === 'result' && (
+          <GiftPlanDisplay 
+            giftPlan={giftPlan}
+            recipientName={formData?.recipientName} 
+          />
+        )}
+      </main>
+      
+      <Footer />
     </div>
   );
 }
